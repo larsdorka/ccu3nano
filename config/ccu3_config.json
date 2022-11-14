@@ -1,0 +1,25 @@
+{
+  "variables": [
+    {"id": "1658", "name": "Software"},
+    {"id": "1354", "name": "Buero Winderl"},
+    {"id": "1747", "name": "Besprechung gross"},
+    {"id": "1745", "name": "Buero Fleischmann"},
+    {"id": "1746", "name": "Buero Gimpl"},
+    {"id": "1744", "name": "Buero Weingarten"},
+    {"id": "1743", "name": "Hardware"},
+    {"id": "2573", "name": "Labor"},
+    {"id": "1748", "name": "Werkstatt"},
+    {"id": "1657", "name": "Automatisierung"},
+    {"id": "2572", "name": "A71 Elektrik"},
+    {"id": "12578", "name": "A71 Besprechung"},
+    {"id": "12579", "name": "A71 Buero Schettl"},
+    {"id": "12580", "name": "A71 Konstruktion"},
+    {"id": "12581", "name": "A71 Mechanik"},
+    {"id": "12583", "name": "A71 CNC"}
+  ],
+  "period": 10000,
+  "url": "",
+  "username": "",
+  "password": "",
+  "rebootAfterErrors": 5
+}
