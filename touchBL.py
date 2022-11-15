@@ -19,7 +19,7 @@ def lightup():
 
 
 def lightdown(timer):
-    backlight.duty(1023)
+    backlight.duty(900)
     return
 
 

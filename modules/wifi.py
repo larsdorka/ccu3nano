@@ -21,7 +21,7 @@ def load_config(path="config/wlan.json"):
     except Exception as ex:
         print("error on reading config file: " + str(ex))
     configCount = min(len(filedata['ssid']), len(filedata['wpa']))
-    print("found {0} configs".format(configCount))
+    print("found {0} config(s)".format(configCount))
 
 
 def connect_scan(timeout=10):

@@ -139,6 +139,7 @@ def get_all():
             stop_time = time.ticks_ms()
             duration = time.ticks_diff(stop_time, start_time)
             if _logging:
+                # print("Response: {0}".format(response_getall.text))
                 print("Duration: {0} ms".format(duration))
             response_getall_object = ujson.loads(response_getall.text)
         except Exception as ex:
