@@ -19,6 +19,11 @@ PALE_RED = create_color(12, 255, 192, 192)
 PALE_GREEN = create_color(13, 192, 255, 192)
 DARK_GREY = create_color(14, 64, 64, 64)
 
+RECT_FG_COLOR = 0
+RECT_BG_COLOR = 0
+TEXT_FG_COLOR = 0
+TEXT_BG_COLOR = 0
+
 config_data = {}
 room_data = {
     "rooms":  []
@@ -196,13 +201,18 @@ def timer_callback(timer):
 def repaint_data():
     for room_number in range(len(room_data['rooms'])):
         if room_data['rooms'][room_number]['state']:
-            ssd.fill_rect(19 + ((room_number // 8) * 150), 24 * ((room_number % 8) + 1), 130, 22, GREEN)
-            ssd.rect(19 + ((room_number // 8) * 150), 24 * ((room_number % 8) + 1), 130, 22, PALE_GREEN)
-            Label(wri, 24 * ((room_number % 8) + 1) + 5, 24 + ((room_number // 8) * 150) , room_data['rooms'][room_number]['name'], invert=False, fgcolor=BLACK, bgcolor=GREEN, bdcolor=False)
+            RECT_BG_COLOR = GREEN
+            RECT_FG_COLOR = PALE_GREEN
+            TEXT_BG_COLOR = GREEN
+            TEXT_FG_COLOR = BLACK
         else:
-            ssd.fill_rect(19 + ((room_number // 8) * 150), 24 * ((room_number % 8) + 1), 130, 22, RED)
-            ssd.rect(19 + ((room_number // 8) * 150), 24 * ((room_number % 8) + 1), 130, 22, PALE_RED)
-            Label(wri, 24 * ((room_number % 8) + 1) + 5, 24 + ((room_number // 8) * 150), room_data['rooms'][room_number]['name'], invert=False, fgcolor=BLACK, bgcolor=RED, bdcolor=False)
+            RECT_BG_COLOR = RED
+            RECT_FG_COLOR = PALE_RED
+            TEXT_BG_COLOR = RED
+            TEXT_FG_COLOR = BLACK
+        ssd.fill_rect(19 + ((room_number // 8) * 150), 24 * ((room_number % 8) + 1), 130, 22, RECT_BG_COLOR)
+        ssd.rect(19 + ((room_number // 8) * 150), 24 * ((room_number % 8) + 1), 130, 22, RECT_FG_COLOR)
+        Label(wri, 24 * ((room_number % 8) + 1) + 5, 24 + ((room_number // 8) * 150) , room_data['rooms'][room_number]['name'], invert=False, fgcolor=TEXT_FG_COLOR, bgcolor=TEXT_BG_COLOR, bdcolor=False)
     refresh(ssd)
     return
 
